@@ -32,3 +32,15 @@ mix.copy('resources/assets/admin/bootstrap/fonts','public/fonts');
 mix.copy('resources/assets/admin/dist/fonts','public/fonts');
 mix.copy('resources/assets/admin/dist/img','public/img');
 
+mix.styles([
+    'resources/assets/front/css/animate.css',
+    'resources/assets/front/css/main.css'
+],'public/css/front.css');
+
+mix.scripts([
+    'resources/assets/front/js/viewportchecker.js',
+    'resources/assets/front/js/app.js'
+],'public/js/front.js');
+
+mix.copy('resources/assets/front/fonts','public/fonts');
+mix.copy('resources/assets/front/images','public/img');

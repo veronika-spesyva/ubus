@@ -11,7 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index');
+Route::get('/pronas', 'HomeController@about');
+
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function(){
+    Route::get('/','DashboardController@index');
+    Route::resource('/cities', 'CitiesController');
+    Route::resource('/price', 'PricesController');
 });
-Route::get('/admin','Admin\DashboardController@index');
+
+
+// Route::get('/admin', 'Admin\DashboardController@index');

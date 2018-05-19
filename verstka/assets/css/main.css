@@ -1,0 +1,189 @@
+@font-face{font-family:Raleway-Regular;src:url(/assets/fonts/Raleway-Regular.ttf);}
+@font-face{font-family:Raleway-Light;src:url(/assets/fonts/Raleway-Light.ttf);}
+@font-face{font-family:Raleway-Bold;src:url(/assets/fonts/Raleway-Bold.ttf);}
+@font-face{font-family:Roboto-Bold;src:url(/assets/fonts/Roboto-Bold.ttf);}
+body{font-family:Raleway-Regular;font-size:16px;line-height:1.5;color:#5a5a5a;}
+.hidden{opacity:0;}
+.visible{opacity:1;}
+.first-line{background-color:#018ae0;font-size:14px;color:#fff;}
+.first-line .row{height:60px;}
+.first-line p{margin:0;}
+.btn-outline-warning{color:#fff;background-color:transparent;background-image:none;border-color:#fff;}
+.first-line a{color:#ccc;margin-left:3px;}
+.first-line a.active{color:#fff;text-decoration:underline;}
+.first-line button{margin-left:20px;}
+.navbar-collapse ul{text-align:right;}
+.navbar-brand img{width:220px;margin-right:5px;margin-top:-5px;}
+.navbar{padding:0;height:85px;}
+.navbar ul{padding:0;justify-content:flex-end;}
+.navbar li.active{border-bottom:2px solid #018ae0;}
+.swiper-container{width:100%;height:100%;}
+.swiper-slide{text-align:center;font-size:18px;background:#fff;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;}
+.swiper-slide img{width:100%;}
+.yellow-line{background-color:#ede617;}
+.yellow-line .row{height:120px;}
+.yellow-line img{width:auto;height:40px;}
+.yellow-line ul{margin:0;padding:0;list-style-type:none;text-align:left;}
+.yellow-line ul li{float:left;}
+.yellow-line ul li:nth-child(2){margin-left:15px;}
+.yellow-line ul li a{color:#5a5a5a;font-size:14px;}
+.about-company .row{height:600px;}
+.about-company h3{font-family:Raleway-Bold;}
+.proposition{background-color:#018ae0;color:#fff;}
+.proposition .row{height:120px;}
+.proposition p{margin:0;}
+.proposition h3{font-family:Raleway-Bold;margin:0;}
+.proposition button{float:right;}
+.btn-warning{color:#212529;background-color:#ede617;border-color:#ede617;}
+.advantages .row{height:450px;}
+.advantages img{height:70px;}
+.advantages-item{text-align:center;}
+.advantages-item h5{margin-top:20px;font-family:Raleway-Bold;}
+.way {
+    background-image: url(/assets/images/way.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+.way .row{height:400px;padding-bottom:60px;flex-direction:column;justify-content:flex-end;}
+.way h3{color:#fff;font-family:Raleway-Bold;font-size:42px;}
+.yellow-hr{width:110px;height:7px;background-color:#ede617;}
+.route{padding-top:100px;padding-bottom:50px;}
+.route a{color:#5a5a5a;}
+.route a:hover{border:none;text-decoration:none;color:#018ae0;}
+.route-item{margin-bottom:25px;}
+.route-item img{width:100%;margin-bottom:10px;}
+footer{background-color:#224e94;color:#fff;padding:40px 0;}
+footer img{width:240px;}
+.footer-about{font-size:11px;text-align:justify;}
+.footer-about p{margin:0;padding-top:15px;}
+footer ul{list-style-type:none;text-align:left;}
+footer ul li{font-size:14px;}
+footer ul li:first-child{font-size:16px;text-decoration:underline;}
+.routes .card-header img{width:auto;height:100px;}
+.routes .card-header button{text-align:left;color:#5a5a5a;font-size:24px;font-family:Raleway-Bold;}
+.routes .card-header button:hover,
+.routes .card-header button:focus{text-decoration:none;}
+.routes .card-header .cities{font-size:14px;color:#a5a5a5;}
+.routes .card-header{padding:.75rem 1.25rem;margin-bottom:0;background-color:rgba(0,0,0,0);border-bottom:0px;}
+.routes .card{box-shadow:5px 5px 10px rgba(0,0,0,.1);border-radius:0;margin-bottom:15px;}
+.card-body .row{padding:15px 20px;}
+.card-body .row p{margin:0;}
+.routes-price{font-size:20px;margin-right:10px;font-family:Arial;}
+.card-body button{padding:.375rem 2rem;}
+.card-body{padding:0 1.25rem;}
+.begin{background-color:#fff81d;color:#5a5a5a;padding:7%;padding-right:20%;margin:8.5% 0;}
+.begin h3{font-size:14px;text-transform:uppercase;font-family:Roboto-Bold;}
+.begin p{font-size:20px;line-height:1.8;margin:0;}
+.company-info{width:100%;margin:6%;margin-bottom:0;display:flex;justify-content:space-between;}
+.company-info h1{font-size:50px;text-transform:uppercase;font-family:Roboto-Bold;}
+.company-info p{line-height:2;font-size:16px;position:absolute;width:30%;}
+.company-info img{width:600px;height:480px;}
+.company-info .block-1{margin-top:80px;}
+.company-today{display:flex;}
+.company-today .block-1{width:60%;}
+.company-today .block-1 h3{font-size:30px;text-transform:uppercase;font-family:Roboto-Bold;}
+.company-today .block-1 p{font-size:20px;line-height:1.8;margin:0;}
+.block-2{text-align:right;width:40%;}
+#map{width:100%;height:500px;}
+.contacts-company{text-align:center;}
+.contacts-company h5{font-size:30px;text-transform:uppercase;font-family:Roboto-Bold;}
+
+/*rout-card*/
+.mini-info{
+	    box-shadow: 0 5px 24px rgba(168,175,196,.35);
+	padding: 30px;
+	background-color: #fff;
+}
+.info-img{
+	height: 100%;
+	box-shadow: 0 5px 24px rgba(168,175,196,.35);
+}
+.info-img img{
+	height: 100%; 
+	width: 100%;
+}
+.rout-card h1{
+	    font-size: 28px;
+    margin-bottom: 20px;
+}
+.gray-text{
+	color: #a7a7a7;
+    font-size: 14px;
+}
+.route-info{
+	margin-top: 40px;
+}
+.routes-buy{
+	width: 100%;
+	background-color: #f1f2f6;
+	padding: 40px;
+}
+.routes-buy2{
+	background-color: #fff;
+	box-shadow: 0 5px 24px rgba(168,175,196,.35);
+	padding: 30px;
+}
+.card-schedule table{
+	background-color: #fff;
+	box-shadow: 0 5px 24px rgba(168,175,196,.35);
+	padding: 30px;
+}
+.step{
+	text-decoration: underline;
+	color: #5a5a5a;
+}
+.seat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 30px;
+    padding: 5px 10px;
+    border: 1px solid #5a5a5a;
+    color: #5a5a5a;
+}
+.seat:hover{
+	cursor: pointer;
+	background-color: #018ae0;
+	color: #fff;
+}
+/*.number{
+	color: #fff;
+}*/
+.up-line{
+	flex-wrap:nowrap;
+	margin-bottom: 20px;
+}
+.seat-line {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.seat-line span{
+	margin: 5px;
+}
+.no-style{
+	border: none;
+	color: transparent;
+}
+.no-style:hover{
+	cursor: default;
+	background-color: transparent;
+	color: transparent;
+}
+.bus {
+    border: 2px solid #5a5a5a;
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;
+}
+.driver{
+	display: flex;
+    width: 50px;
+    align-items: flex-end;
+    padding-bottom: 30px;
+    font-size: 24px;
+}
+.about-company img{
+	    width: 100%
+}
