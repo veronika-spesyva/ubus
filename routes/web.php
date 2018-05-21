@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/routes', 'RoutesController@index');
+Route::get('/routes/{id}', 'RoutesController@view');
 Route::get('/pronas', 'HomeController@about');
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function(){

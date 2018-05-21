@@ -43,13 +43,13 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav col-xl- col-lg-6 col-md-6 ml-auto ">
 							<li class="nav-item active">
-								<a class="nav-link" href="index.html">Главная <span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="{{ URL::to('/') }}">Главная <span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="about.html">О нас</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="routes.html">Направления</a>
+								<a class="nav-link" href="{{ URL::to('routes') }}">Направления</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="services.html">Услуги</a>
@@ -100,13 +100,13 @@
 			</div>
 		</div>
 	</footer>
-
+		<script src="{{mix('js/app.js')}}" ></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqJMiDrWYoX8YhuM-N2GKCiOORfITLkTM&callback=initMap"></script>
-        <script src="/js/front.js"></script>
+        <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqJMiDrWYoX8YhuM-N2GKCiOORfITLkTM&callback=initMap"></script>--->
+		<script src="/js/front.js"></script>
 </body>
 </html>

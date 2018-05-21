@@ -11,36 +11,5 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.styles([
-    'resources/assets/admin/bootstrap/css/bootstrap.min.css',
-    'resources/assets/admin/font-awesome/4.5.0/css/font-awesome.min.css',
-    'resources/assets/admin/ionicons/2.0.1/css/ionicons.min.css',
-    'resources/assets/admin/dist/css/AdminLTE.min.css',
-    'resources/assets/admin/dist/css/skins/_all-skins.min.css'
-],'public/css/admin.css');
-
-mix.scripts([
-    'resources/assets/admin/plugins/jQuery/jquery-2.2.3.min.js',
-    'resources/assets/admin/bootstrap/js/bootstrap.min.js',
-    'resources/assets/admin/plugins/slimScroll/jquery.slimscroll.min.js',
-    'resources/assets/admin/plugins/fastclick/fastclick.js',
-    'resources/assets/admin/dist/js/app.min.js',
-    'resources/assets/admin/dist/js/demo.js'
-],'public/js/admin.js');
-
-mix.copy('resources/assets/admin/bootstrap/fonts','public/fonts');
-mix.copy('resources/assets/admin/dist/fonts','public/fonts');
-mix.copy('resources/assets/admin/dist/img','public/img');
-
-mix.styles([
-    'resources/assets/front/css/animate.css',
-    'resources/assets/front/css/main.css'
-],'public/css/front.css');
-
-mix.scripts([
-    'resources/assets/front/js/viewportchecker.js',
-    'resources/assets/front/js/app.js'
-],'public/js/front.js');
-
-mix.copy('resources/assets/front/fonts','public/fonts');
-mix.copy('resources/assets/front/images','public/img');
+mix.react('resources/assets/js/app.js', 'public/js')
+   .sass('resources/assets/sass/app.scss', 'public/css');
