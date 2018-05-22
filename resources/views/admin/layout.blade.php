@@ -6,6 +6,7 @@
   <title>AdminLTE 2 | Blank Page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css">
   <link rel="stylesheet" href="/css/admin.css">
   <style>
       table.table form
@@ -216,11 +217,12 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
-          <a href="#">
+          <a href="">
             <i class="fa fa-dashboard"></i> <span>Админ-панель</span>
           </a>
         </li>
-        <li><a href="#"><i class="fa fa-sticky-note-o"></i> <span>Оплата</span></a></li>
+        <!-- <li><a href="#"><i class="fa fa-sticky-note-o"></i> <span>Оплата</span></a></li> -->
+        <li><a href="{{route('trips.index')}}"><i class="fa fa-sticky-note-o"></i> <span>Направления</span></a></li>
 <!--        <li><a href="#"><i class="fa fa-list-ul"></i> <span>Категории</span></a></li>
         <li><a href="#"><i class="fa fa-tags"></i> <span>Теги</span></a></li>
         <li>
@@ -444,12 +446,21 @@
     </div>
   </aside>
   <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
 <script src="/js/admin.js"> </script>
+<script src="/js/bootstrap-datepicker.js"></script>
+<script src="/plugins/ckeditor/ckeditor.js"></script>
+<script src="/plugins/ckfinder/ckfinder.js"></script>
+<script>
+    $(document).ready(function(){
+        var editor = CKEDITOR.replaceAll();
+        CKFinder.setupCKEditor( editor );
+    })
+</script>
 </body>
 </html>
 

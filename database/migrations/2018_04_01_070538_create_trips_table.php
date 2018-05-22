@@ -15,13 +15,17 @@ class CreateTripsTable extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('title_h1');
             $table->text('title');
-            $table->integer('city_from_id');
-            $table->integer('city_to_id');
-            $table->integer('bus_id');
-            $table->double('price');
+            $table->text('route');
+            $table->string('image');
+            $table->date('date');
+            $table->time('time');
             $table->integer('distance');
-            $table->datetime('schedule');
+            $table->integer('price');
+            $table->text('content');
+            $table->text('schedule');
+            $table->integer('bus_id');
             $table->string('slug');
             $table->timestamps();
         });

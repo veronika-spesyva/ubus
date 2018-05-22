@@ -25,7 +25,8 @@ mix.scripts([
     'resources/assets/admin/plugins/slimScroll/jquery.slimscroll.min.js',
     'resources/assets/admin/plugins/fastclick/fastclick.js',
     'resources/assets/admin/dist/js/app.min.js',
-    'resources/assets/admin/dist/js/demo.js'
+    'resources/assets/admin/dist/js/demo.js',
+    'resources/assets/admin/dist/js/scripts.js'
 ],'public/js/admin.js');
 
 mix.copy('resources/assets/admin/bootstrap/fonts','public/fonts');
@@ -44,3 +45,6 @@ mix.scripts([
 
 mix.copy('resources/assets/front/fonts','public/fonts');
 mix.copy('resources/assets/front/images','public/img');
+mix.copy('resources/assets/admin/plugins/datepicker/datepicker3.css','public/css');
+mix.copy('resources/assets/admin/plugins/datepicker/bootstrap-datepicker.js','public/js');
+

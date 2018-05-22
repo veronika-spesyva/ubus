@@ -1,1 +1,8 @@
-{}
+{
+    "/css/admin.css": "/css/admin.css",
+    "/js/admin.js": "/js/admin.js",
+    "/css/front.css": "/css/front.css",
+    "/js/front.js": "/js/front.js",
+    "/css/datepicker3.css": "/css/datepicker3.css",
+    "/js/bootstrap-datepicker.js": "/js/bootstrap-datepicker.js"
+}
