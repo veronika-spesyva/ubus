@@ -46,6 +46,9 @@
 					</div>
 				</div>
 			</div>
+			<div class="container">
+				<div id="route"></div>
+			</div>
 		</div>
 
 @endsection

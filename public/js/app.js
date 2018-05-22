@@ -53699,16 +53699,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Step1__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Step2__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Step3__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Step1__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Step2__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Step3__ = __webpack_require__(221);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -53725,10 +53732,24 @@ var Route = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Route.__proto__ || Object.getPrototypeOf(Route)).call(this, props));
 
         _this.state = {
+            place: null,
+            form: {
+                name: '',
+                surname: '',
+                patronymic: '',
+                email: '',
+                phone: '',
+                trip_id: 2,
+                date: new Date(),
+                time: '10:30'
+            },
             step: 0
         };
         _this.handleChange = _this.handleChange.bind(_this);
         _this.renderStep = _this.renderStep.bind(_this);
+        _this.togglePlace = _this.togglePlace.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+        _this.handleChangeForm = _this.handleChangeForm.bind(_this);
         return _this;
     }
 
@@ -53738,15 +53759,45 @@ var Route = function (_Component) {
             this.setState({ step: value });
         }
     }, {
+        key: 'handleChangeForm',
+        value: function handleChangeForm(name, e) {
+            this.setState({ form: _extends({}, this.state.form, _defineProperty({}, name, e.target.value)) });
+        }
+    }, {
+        key: 'togglePlace',
+        value: function togglePlace(place) {
+            this.setState({ place: place });
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit() {
+            console.log(this.state);
+            console.log(JSON.stringify({ place: this.state.place, form: this.state.form }));
+            var options = {
+                method: 'POST',
+                data: {
+                    place: this.state.place,
+                    user: this.state.form
+                },
+                url: 'http://localhost:8000/api/order'
+            };
+            __WEBPACK_IMPORTED_MODULE_2_axios___default()(options);
+        }
+    }, {
         key: 'renderStep',
         value: function renderStep() {
             switch (this.state.step) {
                 case 0:
-                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Step1__["a" /* default */], { handleChange: this.handleChange });
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Step1__["a" /* default */], { handleChange: this.handleChange });
                 case 1:
-                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Step2__["a" /* default */], { handleChange: this.handleChange });
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Step2__["a" /* default */], { handleChange: this.handleChange, place: this.state.place, togglePlace: this.togglePlace });
                 case 2:
-                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Step3__["a" /* default */], { handleChange: this.handleChange });
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Step3__["a" /* default */], {
+                        handleChange: this.handleChange,
+                        handleChangeForm: this.handleChangeForm,
+                        handleSubmit: this.handleSubmit,
+                        values: this.state.form
+                    });
                 default:
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', null);
             }
@@ -53828,68 +53879,16 @@ var Step1 = function (_React$Component) {
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-row" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "form-group col-md-5" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "label",
-                            { htmlFor: "inputCity" },
-                            "\u0417\u0432\u0456\u0434\u043A\u0438"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "select",
-                            { id: "inputState", className: "form-control" },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "option",
-                                { selected: true },
-                                "Choose..."
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "option",
-                                null,
-                                "..."
-                            )
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "form-group col-md-5" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "label",
-                            { htmlFor: "inputState" },
-                            "\u041A\u0443\u0434\u0438"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "select",
-                            { id: "inputState", className: "form-control" },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "option",
-                                { selected: true },
-                                "Choose..."
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "option",
-                                null,
-                                "..."
-                            )
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "form-group col-md-2" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "label",
-                            { htmlFor: "inputState" },
-                            "\u0414\u0430\u0442\u0430"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "input-group date" },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", className: "form-control", id: "datepicker", placeholder: "MM/DD/YYYY" })
-                        )
-                    )
+                    "form",
+                    { action: "https://www.portmone.com.ua/gateway/", method: "post" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "payee_id", value: "13990" }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "shop_order_number", value: "543" }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "bill_amount", value: "200" }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "description", value: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0437\u0430\u043A\u0430\u0437\u0430" }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "success_url", value: "http://example.com/success.html" }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "failure_url", value: "http://example.com/failure.html" }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "lang", value: "\u042F\u0437\u044B\u043A \u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430" }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "submit", value: "\u041E\u043F\u043B\u0430\u0442\u0438\u0442\u044C" })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "a",
@@ -53932,26 +53931,11 @@ var Step2 = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Step2.__proto__ || Object.getPrototypeOf(Step2)).call(this, props));
 
-        _this.state = {
-            place: null
-        };
-        _this.togglePlace = _this.togglePlace.bind(_this);
         _this.renderLine = _this.renderLine.bind(_this);
         return _this;
     }
 
     _createClass(Step2, [{
-        key: "togglePlace",
-        value: function togglePlace(place) {
-            /* if (this.state.places.includes(place)) {
-               this.setState({ places: this.state.places.filter(item => item !== place) });
-             }
-             else {
-               this.setState({ places: [...this.state.places, place] })
-             }*/
-            this.setState({ place: place });
-        }
-    }, {
         key: "renderLine",
         value: function renderLine() {
             var _this2 = this;
@@ -53975,10 +53959,10 @@ var Step2 = function (_React$Component) {
                         "span",
                         {
                             onClick: function onClick() {
-                                return _this2.togglePlace(seat);
+                                return _this2.props.togglePlace(seat);
                             },
                             key: idx,
-                            className: _this2.state.place === seat ? "seat active" : "seat"
+                            className: _this2.props.place === seat ? "seat active" : "seat"
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
@@ -54092,7 +54076,10 @@ var Step3 = function (_React$Component) {
     _createClass(Step3, [{
         key: "render",
         value: function render() {
-            var handleChange = this.props.handleChange;
+            var _props = this.props,
+                handleChange = _props.handleChange,
+                handleChangeForm = _props.handleChangeForm,
+                values = _props.values;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
@@ -54122,13 +54109,62 @@ var Step3 = function (_React$Component) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
-                    { id: "checkout" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { id: "checkout_wrapper" })
+                    { className: "form-row" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "form-group col-md-12" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "label",
+                            { htmlFor: "name" },
+                            "Name"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { id: "name", type: "text", onChange: handleChangeForm.bind(this, 'name'), value: values.name })
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "form-group col-md-12" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "label",
+                            { htmlFor: "secondName" },
+                            "Second Name"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { id: "secondName", type: "text", onChange: handleChangeForm.bind(this, 'surname'), value: values.surname })
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "form-group col-md-12" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "label",
+                            { htmlFor: "secondName" },
+                            "patronymic??"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { id: "patronymic", type: "text", onChange: handleChangeForm.bind(this, 'patronymic'), value: values.patronymic })
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "form-group col-md-12" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "label",
+                            { htmlFor: "email" },
+                            "email"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { id: "email", type: "email", onChange: handleChangeForm.bind(this, 'email'), value: values.email })
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "form-group col-md-12" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "label",
+                            { htmlFor: "phone" },
+                            "phone"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { id: "phone", type: "text", onChange: handleChangeForm.bind(this, 'phone'), value: values.phone })
+                    )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "a",
-                    null,
-                    "\u0414\u0430\u043B\u0456"
+                    { onClick: this.props.handleSubmit },
+                    "\u041A\u0443\u043F\u0438\u0442\u044C"
                 )
             );
         }

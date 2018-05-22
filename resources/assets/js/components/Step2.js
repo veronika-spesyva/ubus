@@ -3,21 +3,7 @@ import React from 'react'
 class Step2 extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            place: null,
-        };
-        this.togglePlace = this.togglePlace.bind(this);
         this.renderLine = this.renderLine.bind(this);
-    }
-
-    togglePlace(place) {
-       /* if (this.state.places.includes(place)) {
-          this.setState({ places: this.state.places.filter(item => item !== place) });
-        }
-        else {
-          this.setState({ places: [...this.state.places, place] })
-        }*/
-       this.setState({ place })
     }
 
     renderLine(ids = []) {
@@ -26,9 +12,9 @@ class Step2 extends React.Component {
                 {ids.map((seat, idx) => {
                     if (!seat) return <span key={idx} className="seat no-style" id="0"><span className="number">0</span></span>;
                     return <span
-                        onClick={() => this.togglePlace(seat)}
+                        onClick={() => this.props.togglePlace(seat)}
                         key={idx}
-                        className={this.state.place === seat ? "seat active" : "seat"}
+                        className={this.props.place === seat ? "seat active" : "seat"}
                     >
                         <span className="number">{seat}</span>
                     </span>;

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Passengers extends Model
 {
+    protected $fillable = ['name', 'surname', 'patronymic', 'email', 'phone', 'trip_id', 'date', 'time'];
     public function trip() {
         return $this->belongsToMany(
                 Passengers::class,
