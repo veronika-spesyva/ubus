@@ -118,12 +118,16 @@
         	</div>
         </footer>
 
+			</div>
+		</div>
+	</footer>
+		<script src="{{mix('js/app.js')}}" ></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqJMiDrWYoX8YhuM-N2GKCiOORfITLkTM&callback=initMap"></script>
+        <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqJMiDrWYoX8YhuM-N2GKCiOORfITLkTM&callback=initMap"></script>-->
         <script src="/js/front.js"></script>
     </body>
     </html>

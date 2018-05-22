@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/routes', 'RoutesController@index');
+Route::get('/routes/{id}', 'RoutesController@view');
 Route::get('/pronas', 'HomeController@about');
 Route::get('/routes', 'HomeController@routes') -> name('trip.all');
 Route::get('/routes/{slug}', 'HomeController@show') -> name('trip.show');

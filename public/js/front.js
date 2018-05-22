@@ -18,6 +18,7 @@ offset: 100
 });
 });
 ///map/
+/*
       function initMap() {
         var uluru = {lat: 50.911663, lng: 34.810407};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -393,4 +394,4 @@ offset: 100
           position: uluru,
           map: map
         });
-      }
+      }*/

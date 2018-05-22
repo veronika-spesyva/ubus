@@ -17,7 +17,7 @@
 							</div>
 						</a>
 						<b>{{$trip->price}} грн</b>
-					</div>	
+					</div>
 					@endforeach
 				</div>
 			</div>

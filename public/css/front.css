@@ -928,6 +928,12 @@ footer ul li:first-child{font-size:16px;text-decoration:underline;}
 	background-color: #018ae0;
 	color: #fff;
 }
+
+.active {
+    cursor: pointer;
+    background-color: #018ae0;
+    color: #fff;
+}
 /*.number{
 	color: #fff;
 }*/
