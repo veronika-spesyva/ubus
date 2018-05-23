@@ -42,6 +42,16 @@ class HomeController extends Controller
     	return view('pages.show', compact('trips'));
     }
 
+    public function services()
+            {
+        return view('pages.services');
+    }
+
+    public function contacts()
+            {
+        return view('pages.contacts');
+    }
+
     public function paySuccess(Request $request) {
         print_r('<pre>');
         print_r($request->getContent());

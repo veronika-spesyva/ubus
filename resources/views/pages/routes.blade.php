@@ -1,8 +1,6 @@
 @extends('layout')
 
 @section('content')
-
-<main>
 	<div class="routes">
 		<div class="container">
 			<div class="post">
@@ -23,6 +21,5 @@
 			</div>
 		</div>
 	</div>
-</main>
 
 @endsection

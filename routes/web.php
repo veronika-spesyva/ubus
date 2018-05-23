@@ -13,6 +13,10 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/pronas', 'HomeController@about');
+Route::get('/napryami', 'HomeController@routes');
+Route::get('/napryami/{slug}', 'HomeController@show') -> name('trip.show');
+Route::get('/poslugi', 'HomeController@services');
+Route::get('/kontakti', 'HomeController@contacts');
 Route::get('/routes', 'HomeController@routes') -> name('trip.all');
 Route::get('/routes/{slug}', 'HomeController@show') -> name('trip.show');
 Route::get('/pay/{slug}', 'HomeController@pay')->name('trip.pay');
