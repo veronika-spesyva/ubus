@@ -9,7 +9,7 @@
 						<div class="row">
 							<div class="col-xl-4 col-lg-4 col-md-4">
 								<div class="info-img">
-									<img src="{{$trips->getImage()}}" alt="">
+									<img src="/{{$trips->getImage()}}" alt="">
 								</div>
 							</div> 
 							<div class="col-xl-8 col-lg-8 col-md-8">
@@ -34,17 +34,20 @@
 		<div class="container">
 			<div class="row">
 				<div class="route-info">
-					{{$trips->content}}
+					{!! $trips->content !!}
 				</div>
 			</div>
 			<div class="conteiner-fluid">
 				<div class="routes-buy">
 					<div class="container">
 						<div class="card-schedule">
-							{{$trips->schedule}}
+							{!! $trips->schedule !!}
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="container">
+				<div id="route"></div>
 			</div>
 		</div>
 

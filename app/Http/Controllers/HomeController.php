@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Passengers;
 use App\Trip;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -14,7 +16,7 @@ class HomeController extends Controller
     }
     
     public function about() 
-            {
+    {
         return view('pages.about');
     }
 
@@ -23,6 +25,17 @@ class HomeController extends Controller
         $trips = Trip::all();
         return view('pages.routes')->with('trips', $trips);
     }
+
+    public function order(Request $request)
+    {
+        $user = $request->input('user');
+        $passenger = new Passengers($user);
+        $passenger->save();
+        // return response()->json($passenger);
+        $trips = Trip::where('slug', 'harkov')->firstOrFail();
+        return redirect()->route('trip.pay', compact('trips'));
+    }
+
 
     public function show($slug)
     {
