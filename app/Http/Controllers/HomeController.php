@@ -26,15 +26,16 @@ class HomeController extends Controller
         return view('pages.routes')->with('trips', $trips);
     }
 
-    public function order(Request $request) {
+    public function order(Request $request)
+    {
         $user = $request->input('user');
         $passenger = new Passengers($user);
         $passenger->save();
         // return response()->json($passenger);
-        return redirect()->away('https://www.portmone.com.ua/gateway/')->withInput([
-            'payee_id' => '13990'
-        ]);
+        $trips = Trip::where('slug', 'harkov')->firstOrFail();
+        return redirect()->route('trip.pay', compact('trips'));
     }
+
 
     public function show($slug)
     {
