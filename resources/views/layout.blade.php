@@ -66,11 +66,8 @@
         						<a class="nav-link" href="/pronas">О нас</a>
         					</li>
         					<li class="nav-item">
-<<<<<<< HEAD
         						<a class="nav-link" href="/napryami">Направления</a>
-=======
         						<a class="nav-link" href="{{route('trip.all')}}">Направления</a>
->>>>>>> e814375bb1a467b40bcfd38ed9ce9830254c2210
         					</li>
         					<li class="nav-item">
         						<a class="nav-link" href="/poslugi">Услуги</a>
