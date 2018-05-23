@@ -34,14 +34,14 @@
 						<p><i class="far fa-envelope"></i> ukrainebus.info@gmail.com</p>
 					</div>
 					<div class="col-xl-5 col-lg-5 col-md-5">
-						<p><i class="fas fa-phone"></i> (0950) 700 112 &nbsp; <button type="button" class="btn btn-outline-warning btn-sm">Заказать звонок</button> </p>
+						<p><i class="fas fa-phone"></i> (0950) 700 112 &nbsp; </p>
 					</div>
 					<div class="col-xl-2 col-lg-2 col-md-2 ml-auto">
 						<div id="google_translate_element"></div><script type="text/javascript">
-							function googleTranslateElementInit() {
-								new google.translate.TranslateElement({pageLanguage: 'uk', includedLanguages: 'en,pl', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-							}
-						</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                            function googleTranslateElementInit() {
+                              new google.translate.TranslateElement({pageLanguage: 'uk', includedLanguages: 'en,pl,uk', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                          }
+                      </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                         <!-- <a href="" class="active">Ru</a>
                         <a href="">En</a>
                         <a href="">Pl</a> -->
@@ -52,7 +52,7 @@
         <div class="nav-line">
         	<div class="container">
         		<nav class="navbar navbar-expand-xl navbar-expand-lg navbar-expand-md navbar-light">
-        			<a class="navbar-brand" href="#"><img src="/img/logo.jpg" alt=""></a>
+        			<a class="navbar-brand" href="/"><img src="/img/logo.jpg" alt=""></a>
         			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         				<span class="navbar-toggler-icon"></span>
         			</button>
@@ -60,26 +60,28 @@
         			<div class="collapse navbar-collapse" id="navbarSupportedContent">
         				<ul class="navbar-nav col-xl- col-lg-6 col-md-6 ml-auto ">
         					<li class="nav-item active">
-        						<a class="nav-link" href="index.html">Главная <span class="sr-only">(current)</span></a>
+        						<a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
         					</li>
         					<li class="nav-item">
-        						<a class="nav-link" href="about.html">О нас</a>
+        						<a class="nav-link" href="/pronas">О нас</a>
         					</li>
         					<li class="nav-item">
-        						<a class="nav-link" href="routes.html">Направления</a>
+        						<a class="nav-link" href="/napryami">Направления</a>
         					</li>
         					<li class="nav-item">
-        						<a class="nav-link" href="services.html">Услуги</a>
+        						<a class="nav-link" href="/poslugi">Услуги</a>
         					</li>
         					<li class="nav-item">
-        						<a class="nav-link" href="contacts.html">Контакты</a>
+        						<a class="nav-link" href="/kontakti">Контакты</a>
         					</li>
         				</ul>
         			</div>
         		</nav>
         	</div>
         </div>
+        <main>
         @yield('content')
+    </main>
         <footer>
         	<div class="container">
         		<div class="row">
@@ -107,7 +109,7 @@
         					<li>Контакты</li>
         					<li>(0950)700 112</li>
         					<li>(0542)700 112</li>
-        					<li>(0977)700 112</li>
+        					<li>(0967)700 112</li>
         					<li>(+48605) 180 180</li>
         					<li>ukrainebus.info@gmail.com</li>
         					<li>ул.Троицкая, 1, г.Сумы</li>

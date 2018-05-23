@@ -58,6 +58,7 @@ class Trip extends Model
         $date = Carbon::createFromFormat('Y-m-d', $value)->format('d/m/y');
         return $date;
     }
+
     public function remove()
     {
         $this->removeImage();
@@ -67,7 +68,7 @@ class Trip extends Model
     {
         if($this->image != null)
         {
-            Storage::delete('public/uploads/' . $this->image);
+            Storage::delete('uploads/' . $this->image);
         }
     }
     public function uploadImage($image)
@@ -76,7 +77,7 @@ class Trip extends Model
 
         $this->removeImage();
         $filename = str_random(10) . '.' . $image->extension();
-        $image->storeAs('public/uploads', $filename);
+        $image->storeAs('uploads', $filename);
         $this->image = $filename;
         $this->save();
     }
@@ -88,8 +89,7 @@ class Trip extends Model
             return '/img/no-image.png';
         }
 
-        return 'public/uploads/' . $this->image;
-
+        return '/uploads/' . $this->image;
     }
 
     public function edit($fields)

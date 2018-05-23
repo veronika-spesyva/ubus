@@ -29,4 +29,14 @@ class HomeController extends Controller
     	$trips = Trip::where('slug', $slug)->firstOrFail();
     	return view('pages.show', compact('trips'));
     }
+
+    public function services() 
+            {
+        return view('pages.services');
+    }
+
+    public function contacts() 
+            {
+        return view('pages.contacts');
+    }
 }

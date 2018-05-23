@@ -15,6 +15,9 @@ Route::get('/', 'HomeController@index');
 Route::get('/pronas', 'HomeController@about');
 Route::get('/napryami', 'HomeController@routes');
 Route::get('/napryami/{slug}', 'HomeController@show') -> name('trip.show');
+Route::get('/poslugi', 'HomeController@services');
+Route::get('/kontakti', 'HomeController@contacts');
+
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function(){
     Route::get('/','DashboardController@index');
