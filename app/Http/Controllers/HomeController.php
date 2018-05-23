@@ -54,9 +54,9 @@ class HomeController extends Controller
 
     public function paySuccess(Request $request) {
         print_r('<pre>');
-        print_r($request->getContent());
-        $xml = new SimpleXMLElement($request);
-        print_r($xml);
+        print_r($request->all());
+        //$xml = new SimpleXMLElement($request);
+        // print_r($xml);
         print_r('<pre>');
     }
 }
