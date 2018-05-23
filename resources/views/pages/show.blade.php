@@ -47,7 +47,7 @@
 				</div>
 			</div>
 			<div class="container">
-				<div id="route"></div>
+				<div id="route" data-id={{ $trips->id }} data-title={{ $trips->title }} data-price={{ $trips->price }} ></div>
 			</div>
 		</div>
 

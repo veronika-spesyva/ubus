@@ -4,6 +4,7 @@ import axios from 'axios';
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
+import Step4 from "./Step4";
 
 export default class Route extends Component {
     constructor(props) {
@@ -16,10 +17,11 @@ export default class Route extends Component {
                 patronymic: '',
                 email: '',
                 phone: '',
-                trip_id: 2,
+                trip_id: props.id,
                 date: new Date(),
                 time: '10:30'
             },
+            user: {},
             step: 0
         };
         this.handleChange = this.handleChange.bind(this);
@@ -42,17 +44,16 @@ export default class Route extends Component {
     }
 
     handleSubmit() {
-        console.log(this.state);
-        console.log(JSON.stringify({ place: this.state.place, form: this.state.form }));
         const options = {
             method: 'POST',
             data: {
-                place: this.state.place,
-                user: this.state.form
+                user: {...this.state.form, place: this.state.place}
             },
             url: 'http://localhost:8000/api/order',
         };
-        axios(options);
+        axios(options).then(response => {
+            this.setState({ step: 3, user: response.data });
+        });
     }
 
     renderStep() {
@@ -64,6 +65,12 @@ export default class Route extends Component {
               handleChangeForm={this.handleChangeForm}
               handleSubmit={this.handleSubmit}
               values={this.state.form}
+          />;
+          case 3: return <Step4
+              values={this.state.user}
+              tripId={this.props.id}
+              tripTitle={this.props.title}
+              tripPrice={this.props.price}
           />;
           default: return <div/>
       }
@@ -77,5 +84,7 @@ export default class Route extends Component {
 }
 
 if (document.getElementById('route')) {
-    ReactDOM.render(<Route/>, document.getElementById('route'));
+    const element = document.getElementById('route');
+    const props = {...element.dataset};
+    ReactDOM.render(<Route {...props} />, element);
 }

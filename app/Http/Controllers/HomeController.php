@@ -6,6 +6,7 @@ use App\Passengers;
 use App\Trip;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use SimpleXMLElement;
 
 class HomeController extends Controller
 {
@@ -31,9 +32,7 @@ class HomeController extends Controller
         $user = $request->input('user');
         $passenger = new Passengers($user);
         $passenger->save();
-        // return response()->json($passenger);
-        $trips = Trip::where('slug', 'harkov')->firstOrFail();
-        return redirect()->route('trip.pay', compact('trips'));
+        return response()->json($passenger);
     }
 
 
@@ -41,5 +40,13 @@ class HomeController extends Controller
     {
     	$trips = Trip::where('slug', $slug)->firstOrFail();
     	return view('pages.show', compact('trips'));
+    }
+
+    public function paySuccess(Request $request) {
+        print_r('<pre>');
+        print_r($request->getContent());
+        $xml = new SimpleXMLElement($request);
+        print_r($xml);
+        print_r('<pre>');
     }
 }
