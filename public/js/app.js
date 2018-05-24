@@ -10265,8 +10265,15 @@ __webpack_require__(92);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+<<<<<<< HEAD
 __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/Example\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 __webpack_require__(116);
+||||||| merged common ancestors
+__webpack_require__(117);
+__webpack_require__(218);
+=======
+__webpack_require__(116);
+>>>>>>> 2803eb98e8b1cdf73e08c500e1ff5abe158116e9
 
 /***/ }),
 /* 92 */
@@ -41144,6 +41151,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Step1__ = __webpack_require__(218);
@@ -41151,6 +41159,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Step3__ = __webpack_require__(220);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+||||||| merged common ancestors
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Step1__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Step2__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Step3__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Step4__ = __webpack_require__(221);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+>>>>>>> 2803eb98e8b1cdf73e08c500e1ff5abe158116e9
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -41166,6 +41185,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+<<<<<<< HEAD
 
 
 var Route = function (_Component) {
@@ -41196,8 +41216,45 @@ var Route = function (_Component) {
         _this.handleSubmit = _this.handleSubmit.bind(_this);
         _this.handleChangeForm = _this.handleChangeForm.bind(_this);
         return _this;
+||||||| merged common ancestors
+        return _possibleConstructorReturn(this, (Example.__proto__ || Object.getPrototypeOf(Example)).apply(this, arguments));
+=======
+
+
+
+var Route = function (_Component) {
+    _inherits(Route, _Component);
+
+    function Route(props) {
+        _classCallCheck(this, Route);
+
+        var _this = _possibleConstructorReturn(this, (Route.__proto__ || Object.getPrototypeOf(Route)).call(this, props));
+
+        _this.state = {
+            place: null,
+            form: {
+                name: '',
+                surname: '',
+                patronymic: '',
+                email: '',
+                phone: '',
+                trip_id: props.id,
+                date: new Date(),
+                time: '10:30'
+            },
+            user: {},
+            step: 0
+        };
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.renderStep = _this.renderStep.bind(_this);
+        _this.togglePlace = _this.togglePlace.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+        _this.handleChangeForm = _this.handleChangeForm.bind(_this);
+        return _this;
+>>>>>>> 2803eb98e8b1cdf73e08c500e1ff5abe158116e9
     }
 
+<<<<<<< HEAD
     _createClass(Route, [{
         key: 'handleChange',
         value: function handleChange(value) {
@@ -41248,6 +41305,68 @@ var Route = function (_Component) {
             }
         }
     }, {
+||||||| merged common ancestors
+    _createClass(Example, [{
+=======
+    _createClass(Route, [{
+        key: 'handleChange',
+        value: function handleChange(value) {
+            this.setState({ step: value });
+        }
+    }, {
+        key: 'handleChangeForm',
+        value: function handleChangeForm(name, e) {
+            this.setState({ form: _extends({}, this.state.form, _defineProperty({}, name, e.target.value)) });
+        }
+    }, {
+        key: 'togglePlace',
+        value: function togglePlace(place) {
+            this.setState({ place: place });
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit() {
+            var _this2 = this;
+
+            var options = {
+                method: 'POST',
+                data: {
+                    user: _extends({}, this.state.form, { place: this.state.place })
+                },
+                url: 'http://localhost:8000/api/order'
+            };
+            __WEBPACK_IMPORTED_MODULE_2_axios___default()(options).then(function (response) {
+                _this2.setState({ step: 3, user: response.data });
+            });
+        }
+    }, {
+        key: 'renderStep',
+        value: function renderStep() {
+            switch (this.state.step) {
+                case 0:
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Step1__["a" /* default */], { handleChange: this.handleChange });
+                case 1:
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Step2__["a" /* default */], { handleChange: this.handleChange, place: this.state.place, togglePlace: this.togglePlace });
+                case 2:
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Step3__["a" /* default */], {
+                        handleChange: this.handleChange,
+                        handleChangeForm: this.handleChangeForm,
+                        handleSubmit: this.handleSubmit,
+                        values: this.state.form
+                    });
+                case 3:
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Step4__["a" /* default */], {
+                        values: this.state.user,
+                        tripId: this.props.id,
+                        tripTitle: this.props.title,
+                        tripPrice: this.props.price
+                    });
+                default:
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', null);
+            }
+        }
+    }, {
+>>>>>>> 2803eb98e8b1cdf73e08c500e1ff5abe158116e9
         key: 'render',
         value: function render() {
             return this.renderStep();
@@ -41260,8 +41379,18 @@ var Route = function (_Component) {
 /* harmony default export */ __webpack_exports__["default"] = (Route);
 
 
+<<<<<<< HEAD
 if (document.getElementById('route')) {
     __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Route, null), document.getElementById('route'));
+||||||| merged common ancestors
+if (document.getElementById('example')) {
+    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Example, null), document.getElementById('example'));
+=======
+if (document.getElementById('route')) {
+    var element = document.getElementById('route');
+    var props = _extends({}, element.dataset);
+    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Route, props), element);
+>>>>>>> 2803eb98e8b1cdf73e08c500e1ff5abe158116e9
 }
 
 /***/ }),
@@ -53752,7 +53881,143 @@ module.exports = ReactDOMInvalidARIAHook;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(25);
+||||||| merged common ancestors
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Step1__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Step2__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Step3__ = __webpack_require__(221);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+var Route = function (_Component) {
+    _inherits(Route, _Component);
+
+    function Route(props) {
+        _classCallCheck(this, Route);
+
+        var _this = _possibleConstructorReturn(this, (Route.__proto__ || Object.getPrototypeOf(Route)).call(this, props));
+
+        _this.state = {
+            place: null,
+            form: {
+                name: '',
+                surname: '',
+                patronymic: '',
+                email: '',
+                phone: '',
+                trip_id: 2,
+                date: new Date(),
+                time: '10:30'
+            },
+            step: 0
+        };
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.renderStep = _this.renderStep.bind(_this);
+        _this.togglePlace = _this.togglePlace.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+        _this.handleChangeForm = _this.handleChangeForm.bind(_this);
+        return _this;
+    }
+
+    _createClass(Route, [{
+        key: 'handleChange',
+        value: function handleChange(value) {
+            this.setState({ step: value });
+        }
+    }, {
+        key: 'handleChangeForm',
+        value: function handleChangeForm(name, e) {
+            this.setState({ form: _extends({}, this.state.form, _defineProperty({}, name, e.target.value)) });
+        }
+    }, {
+        key: 'togglePlace',
+        value: function togglePlace(place) {
+            this.setState({ place: place });
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit() {
+            console.log(this.state);
+            console.log(JSON.stringify({ place: this.state.place, form: this.state.form }));
+            var options = {
+                method: 'POST',
+                data: {
+                    place: this.state.place,
+                    user: this.state.form
+                },
+                url: 'http://localhost:8000/api/order'
+            };
+            __WEBPACK_IMPORTED_MODULE_2_axios___default()(options);
+        }
+    }, {
+        key: 'renderStep',
+        value: function renderStep() {
+            switch (this.state.step) {
+                case 0:
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Step1__["a" /* default */], { handleChange: this.handleChange });
+                case 1:
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Step2__["a" /* default */], { handleChange: this.handleChange, place: this.state.place, togglePlace: this.togglePlace });
+                case 2:
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Step3__["a" /* default */], {
+                        handleChange: this.handleChange,
+                        handleChangeForm: this.handleChangeForm,
+                        handleSubmit: this.handleSubmit,
+                        values: this.state.form
+                    });
+                default:
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', null);
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return this.renderStep();
+        }
+    }]);
+
+    return Route;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Route);
+
+
+if (document.getElementById('route')) {
+    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Route, null), document.getElementById('route'));
+}
+
+/***/ }),
+/* 219 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(21);
+>>>>>>> 2803eb98e8b1cdf73e08c500e1ff5abe158116e9
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -53807,16 +54072,68 @@ var Step1 = function (_React$Component) {
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "form",
-                    { action: "https://www.portmone.com.ua/gateway/", method: "post" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "payee_id", value: "13990" }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "shop_order_number", value: "543" }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "bill_amount", value: "200" }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "description", value: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0437\u0430\u043A\u0430\u0437\u0430" }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "success_url", value: "http://example.com/success.html" }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "failure_url", value: "http://example.com/failure.html" }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "hidden", name: "lang", value: "\u042F\u0437\u044B\u043A \u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430" }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "submit", value: "\u041E\u043F\u043B\u0430\u0442\u0438\u0442\u044C" })
+                    "div",
+                    { className: "form-row" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "form-group col-md-5" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "label",
+                            { htmlFor: "inputCity" },
+                            "\u0417\u0432\u0456\u0434\u043A\u0438"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "select",
+                            { id: "inputState", className: "form-control" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "option",
+                                { selected: true },
+                                "Choose..."
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "option",
+                                null,
+                                "..."
+                            )
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "form-group col-md-5" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "label",
+                            { htmlFor: "inputState" },
+                            "\u041A\u0443\u0434\u0438"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "select",
+                            { id: "inputState", className: "form-control" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "option",
+                                { selected: true },
+                                "Choose..."
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "option",
+                                null,
+                                "..."
+                            )
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "form-group col-md-2" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "label",
+                            { htmlFor: "inputState" },
+                            "\u0414\u0430\u0442\u0430"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { className: "input-group date" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", className: "form-control", id: "datepicker", placeholder: "MM/DD/YYYY" })
+                        )
+                    )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "a",
@@ -54104,7 +54421,81 @@ var Step3 = function (_React$Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Step3);
 
 /***/ }),
+<<<<<<< HEAD
 /* 221 */
+||||||| merged common ancestors
+/* 222 */
+=======
+/* 221 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+function formatDate(date) {
+    var dd = date.getDate();
+    if (dd < 10) dd = '0' + dd;
+    var mm = date.getMonth() + 1;
+    if (mm < 10) mm = '0' + mm;
+    var yy = date.getFullYear() % 100;
+    if (yy < 10) yy = '0' + yy;
+    return dd + '.' + mm + '.' + yy;
+}
+
+var Step4 = function (_React$Component) {
+    _inherits(Step4, _React$Component);
+
+    function Step4() {
+        _classCallCheck(this, Step4);
+
+        return _possibleConstructorReturn(this, (Step4.__proto__ || Object.getPrototypeOf(Step4)).apply(this, arguments));
+    }
+
+    _createClass(Step4, [{
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                values = _props.values,
+                tripPrice = _props.tripPrice,
+                tripTitle = _props.tripTitle;
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'routes-buy2' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'form',
+                    { action: 'https://www.portmone.com.ua/gateway/', method: 'post' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'payee_id', value: '13990' }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'shop_order_number', value: values.id }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'bill_amount', value: tripPrice }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'description', value: '\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u0431\u0438\u043B\u0435\u0442\u0430 \u043D\u0430 ' + tripTitle + ', \u0434\u0430\u0442\u0430:' + formatDate(new Date(values.date)) + ', \u0432\u0440\u0435\u043C\u044F:' + values.time }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'success_url', value: 'http://localhost:8000/pay-success' }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'failure_url', value: 'http://localhost:8000/pay-failure' }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'lang', value: '\u042F\u0437\u044B\u043A \u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430' }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', value: '\u041E\u043F\u043B\u0430\u0442\u0438\u0442\u044C' })
+                )
+            );
+        }
+    }]);
+
+    return Step4;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Step4);
+
+/***/ }),
+/* 222 */
+>>>>>>> 2803eb98e8b1cdf73e08c500e1ff5abe158116e9
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
