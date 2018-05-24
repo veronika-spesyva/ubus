@@ -49,7 +49,7 @@ export default class Route extends Component {
             data: {
                 user: {...this.state.form, place: this.state.place}
             },
-            url: 'http://localhost:8000/api/order',
+            url: 'http://www.ukrainebus.com.ua/api/order',
         };
         axios(options).then(response => {
             this.setState({ step: 3, user: response.data });

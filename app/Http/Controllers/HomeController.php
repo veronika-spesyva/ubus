@@ -59,10 +59,10 @@ class HomeController extends Controller
     }
 
     public function paySuccess(Request $request) {
-        print_r('<pre>');
-        print_r($request->all());
-        //$xml = new SimpleXMLElement($request);
-        // print_r($xml);
-        print_r('<pre>');
+        $passenger = Passengers::find($request->input('SHOPORDERNUMBER'));
+        $passenger->paid = true;
+        $passenger->save();
+        $trips = Trip::find($passenger->trip_id);
+        return view('pages.success-pay', compact('trips'));
     }
 }

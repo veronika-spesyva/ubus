@@ -41225,7 +41225,7 @@ var Route = function (_Component) {
                 data: {
                     user: _extends({}, this.state.form, { place: this.state.place })
                 },
-                url: 'http://localhost:8000/api/order'
+                url: 'http://www.ukrainebus.com.ua/api/order'
             };
             __WEBPACK_IMPORTED_MODULE_2_axios___default()(options).then(function (response) {
                 _this2.setState({ step: 3, user: response.data });
