@@ -26,6 +26,7 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function(){
     Route::resource('/cities', 'CitiesController');
     Route::resource('/price', 'PricesController');
     Route::resource('/trips', 'TripsController');
+    Route::resource('/passengers', 'PassengersController');
 });
 
 

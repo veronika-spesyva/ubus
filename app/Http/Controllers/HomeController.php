@@ -52,4 +52,10 @@ class HomeController extends Controller
             {
         return view('pages.contacts');
     }
+
+    public function pay()
+    {
+        $trips = Trip::all();
+        return view('pages.pay')->with('trips', $trips);
+    }
 }
