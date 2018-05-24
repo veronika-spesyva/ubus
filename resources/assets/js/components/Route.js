@@ -18,7 +18,7 @@ export default class Route extends Component {
                 email: '',
                 phone: '',
                 trip_id: props.id,
-                date: new Date(),
+                date: Date.now(),
                 time: '10:30'
             },
             user: {},

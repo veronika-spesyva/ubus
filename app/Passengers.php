@@ -29,7 +29,7 @@ public static function add($fields){
 
     public function setDateAttribute($value){
         
-        $date=Carbon::createFromFormat('d/m/y', $value)->format('Y-m-d');
+        $date=Carbon::createFromTimestamp(intval($value))->format('Y-m-d');
         $this->attributes['date'] = $date;
     }
     public function getDateAttribute($value)

@@ -51,15 +51,12 @@ class HomeController extends Controller
             {
         return view('pages.contacts');
     }
-<<<<<<< HEAD
 
     public function pay()
     {
         $trips = Trip::all();
         return view('pages.pay')->with('trips', $trips);
     }
-||||||| merged common ancestors
-=======
 
     public function paySuccess(Request $request) {
         print_r('<pre>');
@@ -68,5 +65,4 @@ class HomeController extends Controller
         // print_r($xml);
         print_r('<pre>');
     }
->>>>>>> 2803eb98e8b1cdf73e08c500e1ff5abe158116e9
 }

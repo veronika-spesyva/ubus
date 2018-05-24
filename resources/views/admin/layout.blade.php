@@ -7,6 +7,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css">
+  <link rel="stylesheet" type="text/css" href="/plugins/select2/select2.min.css">
   <link rel="stylesheet" href="/css/admin.css">
   <style>
       table.table form
@@ -456,7 +457,9 @@
 <script src="/js/bootstrap-datepicker.js"></script>
 <script src="/plugins/ckeditor/ckeditor.js"></script>
 <script src="/plugins/ckfinder/ckfinder.js"></script>
+<script src="/plugins/select2/select2.full.min.js"></script>
 <script>
+    $(".select2").select2();
     $(document).ready(function(){
         var editor = CKEDITOR.replaceAll();
         CKFinder.setupCKEditor( editor );
