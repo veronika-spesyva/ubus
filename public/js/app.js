@@ -53805,82 +53805,19 @@ var Step1 = function (_React$Component) {
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "span",
-                        { onClick: function onClick() {
-                                return handleChange(1);
-                            } },
+                        null,
                         " / \u041A\u0440\u043E\u043A 2"
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "span",
-                        { onClick: function onClick() {
-                                return handleChange(2);
-                            } },
+                        null,
                         " / \u041A\u0440\u043E\u043A 3"
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "form-row" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "form-group col-md-5" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "label",
-                            { htmlFor: "inputCity" },
-                            "\u0417\u0432\u0456\u0434\u043A\u0438"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "select",
-                            { id: "inputState", className: "form-control" },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "option",
-                                { selected: true },
-                                "Choose..."
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "option",
-                                null,
-                                "..."
-                            )
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "form-group col-md-5" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "label",
-                            { htmlFor: "inputState" },
-                            "\u041A\u0443\u0434\u0438"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "select",
-                            { id: "inputState", className: "form-control" },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "option",
-                                { selected: true },
-                                "Choose..."
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "option",
-                                null,
-                                "..."
-                            )
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "form-group col-md-2" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "label",
-                            { htmlFor: "inputState" },
-                            "\u0414\u0430\u0442\u0430"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "input-group date" },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", className: "form-control", id: "datepicker", placeholder: "MM/DD/YYYY" })
-                        )
-                    )
+                    "h3",
+                    null,
+                    "\u0406\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0456\u044F \u043F\u0440\u043E \u043D\u0430\u043F\u0440\u044F\u043C"
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "a",

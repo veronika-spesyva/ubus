@@ -59,7 +59,7 @@
 
         			<div class="collapse navbar-collapse" id="navbarSupportedContent">
         				<ul class="navbar-nav col-xl- col-lg-6 col-md-6 ml-auto ">
-        					<li class="nav-item active">
+        					<li class="nav-item">
         						<a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
         					</li>
         					<li class="nav-item">
@@ -119,11 +119,7 @@
         		</div>
         	</div>
         </footer>
-
-			</div>
-		</div>
-	</footer>
-		<script src="{{mix('js/app.js')}}" ></script>
+		<script src="/js/app.js" ></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -131,5 +127,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.js"></script>
         <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqJMiDrWYoX8YhuM-N2GKCiOORfITLkTM&callback=initMap"></script>-->
         <script src="/js/front.js"></script>
+        <!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+(function(){ var widget_id = 'zpUNbb054A';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
     </body>
     </html>
