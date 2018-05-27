@@ -7,14 +7,15 @@ class Step2 extends React.Component {
     }
 
     renderLine(ids = []) {
+        console.log(this.props.buyPlaces)
         return (
             <div className="seat-line">
                 {ids.map((seat, idx) => {
                     if (!seat) return <span key={idx} className="seat no-style" id="0"><span className="number">0</span></span>;
                     return <span
-                        onClick={() => this.props.togglePlace(seat)}
+                        onClick={() => !this.props.buyPlaces.includes(seat) ? this.props.togglePlace(seat) : null}
                         key={idx}
-                        className={this.props.place === seat ? "seat active" : "seat"}
+                        className={this.props.place === seat ? "seat active" : this.props.buyPlaces.includes(seat) ? "seat disabled" : "seat"}
                     >
                         <span className="number">{seat}</span>
                     </span>;

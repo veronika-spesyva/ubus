@@ -1,4 +1,5 @@
 import React from 'react'
+import {API_URL} from "./Route"
 
 function formatDate(date) {
     let dd = date.getDate();
@@ -20,8 +21,8 @@ class Step4 extends React.Component {
                     <input type="hidden" name="shop_order_number" value={values.id} />
                     <input type="hidden" name="bill_amount" value={tripPrice} />
                     <input type="hidden" name="description" value={`Покупка билета на ${tripTitle}, дата:${formatDate(new Date(values.date))}, время:${values.time}`} />
-                    <input type="hidden" name="success_url" value="http://localhost:8000/pay-success"/>
-                    <input type="hidden" name="failure_url" value="http://localhost:8000/pay-failure"/>
+                    <input type="hidden" name="success_url" value={`${API_URL}/pay-success`}/>
+                    <input type="hidden" name="failure_url" value={`${API_URL}/pay-failure`}/>
                     <input type="hidden" name="lang" value="Язык интерфейса"/>
                     <input type="submit" value="Оплатить" />
                 </form>

@@ -3,6 +3,7 @@
 namespace App;
 
 use Carbon\Carbon;
+// use DateTime;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
@@ -28,15 +29,14 @@ public static function add($fields){
     }
 
     public function setDateAttribute($value){
-        
-        $date=Carbon::createFromTimestamp(intval($value))->format('Y-m-d');
-        $this->attributes['date'] = $date;
+        $date = date_create($value);
+        $this->attributes['date'] = date_format($date, 'Y-m-d');
     }
-    public function getDateAttribute($value)
+    /*public function getDateAttribute($value)
     {
         $date = Carbon::createFromFormat('Y-m-d', $value)->format('d/m/y');
         return $date;
-    }
+    }*/
 
     public function remove()
     {

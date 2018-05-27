@@ -40,10 +40,9 @@ class TripsController extends Controller
         $this->validate($request,[
             'title'=>'required', 
             'content'=>'required', 
-            'date'=>'required', 
+            'days'=>'required',
             'image'=>'nullable|image', 
         ]);
-
         $trips = Trip::add($request->all());
         $trips->uploadImage($request->file('image'));
 

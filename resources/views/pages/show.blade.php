@@ -19,7 +19,7 @@
 										<p><i class="fas fa-map-marker-alt"></i> {{$trips->route}}</p>
 									</div>
 									<p><i class="far fa-calendar-alt"></i> Сб</p>
-									<p><i class="far fa-clock"></i> 7:00 </p>
+									<p><i class="far fa-clock"></i> {{$trips->time}} </p>
 									<span class="routes-price">
 										<span>{{$trips->price}}</span> грн
 									</span>

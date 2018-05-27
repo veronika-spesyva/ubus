@@ -27,6 +27,22 @@ class HomeController extends Controller
         return view('pages.routes')->with('trips', $trips);
     }
 
+    public function getPassengers($date, $tripId) {
+        $weekMap = [
+          '1000000',
+          '0100000',
+          '0010000',
+          '0001000',
+          '0000100',
+          '0000010',
+          '0000001',
+        ];
+        $created_date = date_create($date);
+        Trip::where('id', $tripId)->whereRaw('`days` & ? != 0', [bindec($weekMap[date_format($created_date, 'N') - 1])])->firstOrFail();
+        $passengers = Passengers::all()->where('date', date_format($created_date, 'Y-m-d'))->where('trip_id', $tripId)->where('paid', true);
+        return response()->json($passengers->values()->all());
+    }
+
     public function order(Request $request)
     {
         $user = $request->input('user');
@@ -64,5 +80,9 @@ class HomeController extends Controller
         $passenger->save();
         $trips = Trip::find($passenger->trip_id);
         return view('pages.success-pay', compact('trips'));
+    }
+
+    public function payFailure() {
+        return view('pages.failure-pay');
     }
 }

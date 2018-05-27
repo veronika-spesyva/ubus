@@ -45,15 +45,15 @@
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="price" value="{{old('price')}}">
           </div>
           <div class="form-group">
-            <label>Теги</label>
-            <select class="form-control select2" multiple="multiple" data-placeholder="Выберите теги" style="width: 100%;">
-              <option>Alabama</option>
-              <option>Alaska</option>
-              <option>California</option>
-              <option>Delaware</option>
-              <option>Tennessee</option>
-              <option>Texas</option>
-              <option>Washington</option>
+            <label>Дни недели</label>
+            <select id="exampleInputEmail1" name="days[]" class="form-control select2" multiple="multiple" data-placeholder="Выберите дни недели" style="width: 100%;">
+              <option value="0">Понедельник</option>
+              <option value="1">Вторник</option>
+              <option value="2">Среда</option>
+              <option value="3">Четверг</option>
+              <option value="4">Пятница</option>
+              <option value="5">Субота</option>
+              <option value="6">Воскресенье</option>
             </select>
           </div>
           <div class="form-group">
@@ -71,17 +71,6 @@
 
             <p class="help-block">Какое-нибудь уведомление о форматах..</p>
           </div>
-
-          <div class="form-group">
-            <label>Дата:</label>
-
-            <div class="input-group date">
-              <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-              </div>
-              <input type="text" class="form-control pull-right" id="datepicker" name="date" value="{{old('date')}}">
-            </div>
-          </div> 
 
           <!-- checkbox -->
         </div>

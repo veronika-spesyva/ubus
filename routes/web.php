@@ -20,6 +20,7 @@ Route::get('/kontakti', 'HomeController@contacts');
 Route::get('/pay/{slug}', 'HomeController@pay')->name('trip.pay');
 
 Route::post('/pay-success', 'HomeController@paySuccess');
+Route::post('/pay-failure', 'HomeController@payFailure');
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function(){
     Route::get('/','DashboardController@index');

@@ -6,6 +6,8 @@ import Step2 from "./Step2";
 import Step3 from "./Step3";
 import Step4 from "./Step4";
 
+export const API_URL = 'http://localhost:8000/api';
+
 export default class Route extends Component {
     constructor(props) {
         super(props);
@@ -18,10 +20,11 @@ export default class Route extends Component {
                 email: '',
                 phone: '',
                 trip_id: props.id,
-                date: Date.now(),
+                date: undefined,
                 time: '10:30'
             },
             user: {},
+            buyPlaces: [],
             step: 0
         };
         this.handleChange = this.handleChange.bind(this);
@@ -29,6 +32,12 @@ export default class Route extends Component {
         this.togglePlace = this.togglePlace.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeForm = this.handleChangeForm.bind(this);
+        this.handleChangeDate = this.handleChangeDate.bind(this);
+        this.setBuyPlaces = this.setBuyPlaces.bind(this);
+    }
+
+    setBuyPlaces(value) {
+        this.setState({ buyPlaces: value })
     }
 
     handleChange(value) {
@@ -36,7 +45,11 @@ export default class Route extends Component {
     };
 
     handleChangeForm (name,e) {
-        this.setState({ form: {...this.state.form, [name]: e.target.value} })
+        this.setState({ form: {...this.state.form, [name]: e.target.value } });
+    }
+
+    handleChangeDate (value) {
+        this.setState({ form: {...this.state.form, date: value} })
     }
 
     togglePlace(place) {
@@ -49,7 +62,7 @@ export default class Route extends Component {
             data: {
                 user: {...this.state.form, place: this.state.place}
             },
-            url: 'http://www.ukrainebus.com.ua/api/order',
+            url: `${API_URL}/order`,
         };
         axios(options).then(response => {
             this.setState({ step: 3, user: response.data });
@@ -58,8 +71,23 @@ export default class Route extends Component {
 
     renderStep() {
       switch (this.state.step) {
-          case 0: return <Step1 handleChange={this.handleChange} />;
-          case 1: return <Step2 handleChange={this.handleChange} place={this.state.place} togglePlace={this.togglePlace} />;
+          case 0: return <Step1
+              handleChange={this.handleChange}
+              title={this.props.title}
+              price={this.props.price}
+              date={this.state.form.date}
+              tripId={this.props.id}
+              setBuyPlaces={this.setBuyPlaces}
+              onChange={this.handleChangeDate}
+          />;
+          case 1: return <Step2
+              handleChange={this.handleChange}
+              place={this.state.place}
+              date={this.state.form.date}
+              tripId={this.props.id}
+              buyPlaces={this.state.buyPlaces}
+              togglePlace={this.togglePlace}
+          />;
           case 2: return <Step3
               handleChange={this.handleChange}
               handleChangeForm={this.handleChangeForm}

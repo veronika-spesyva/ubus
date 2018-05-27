@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::post('/order', 'HomeController@order');
+Route::get('/passengers/{time}/trip/{tripId}', 'HomeController@getPassengers');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

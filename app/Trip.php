@@ -11,7 +11,7 @@ class Trip extends Model
 {
     use Sluggable;
 
-    protected $fillable = ['title', 'title_h1', 'route', 'image', 'time', 'distance', 'price', 'schedule', 'content', 'date', 'bus_id'];
+    protected $fillable = ['title', 'title_h1', 'route', 'image', 'time', 'distance', 'price', 'schedule', 'content', 'days', 'bus_id'];
     
     public function cities() {
         return $this->belongsToMany(
@@ -48,15 +48,12 @@ class Trip extends Model
         return $trips;
     }
 
-    public function setDateAttribute($value){
-        
-        $date=Carbon::createFromFormat('d/m/y', $value)->format('Y-m-d');
-        $this->attributes['date'] = $date;
-    }
-    public function getDateAttribute($value)
-    {
-        $date = Carbon::createFromFormat('Y-m-d', $value)->format('d/m/y');
-        return $date;
+    public function setDaysAttribute($values){
+        $days = [0,0,0,0,0,0,0];
+        foreach ($values as $value) {
+            $days[$value] = 1;
+        }
+        $this->attributes['days'] = bindec(join("", $days));
     }
 
     public function remove()
